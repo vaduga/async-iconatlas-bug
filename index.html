@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>deck.gl stale iconAtlas reproduction</title>
+    <style>
+      body { margin: 24px; max-width: 720px; color: #222; background: white; font: 16px sans-serif; }
+      nav { display: flex; gap: 16px; margin-bottom: 16px; }
+      a[aria-current="page"] { color: #222; font-weight: bold; }
+      button { padding: 8px; margin-right: 8px; }
+      pre { white-space: pre-wrap; }
+      canvas { display: block; }
+      .canvas-container { position: relative; width: 500px; height: 300px; }
+    </style>
+  </head>
+  <body>
+    <h1>Stale iconAtlas completion</h1>
+    <nav aria-label="Demo version">
+      <a id="original-demo" href="__DEMO_ROOT__">Original bug</a>
+      <a id="fixed-demo" href="__DEMO_ROOT__fixed/">Proposed fix</a>
+    </nav>
+    <p id="variant">Loading demo…</p>
+    <p>Left: SVG icon. Right: transparent atlas cell.</p>
+    <button id="new" disabled>1. Resolve newer atlas first</button>
+    <button id="old" disabled>2. Resolve older atlas afterwards</button>
+    <pre id="report">Initializing deck.gl…</pre>
+    <div class="canvas-container">
+      <canvas id="deck" width="500" height="300"></canvas>
+    </div>
+    <p id="expectation">Open either demo and click buttons 1, then 2. Reload to repeat.</p>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
